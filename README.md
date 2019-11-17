@@ -5,7 +5,8 @@
 ### javax.json 1.1
 ### org.glassfish 1.1
 
-## after the build of the project with Maven
+## after the building the project with Maven
 *** 
 java -jar \target\p2p-0.0.1-SNAPSHOT-jar-with-dependencies.jar
 ***
+#Enjoy
