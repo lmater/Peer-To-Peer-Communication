@@ -1,6 +1,7 @@
 Manifest-Version: 1.0
 Built-By: IR2M
-Class-Path: lib/javax.json-api-1.1.jar lib/javax.json-1.1.jar
+Class-Path: dependency/javax.json-api-1.1.jar dependency/javax.json-1.
+ 1.jar
 Build-Jdk: 1.8.0_221
 Created-By: Maven Integration for Eclipse
 Main-Class: lmater.peer2peer.peer.Peer
