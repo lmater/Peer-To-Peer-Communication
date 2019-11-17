@@ -10,15 +10,21 @@ import javax.json.JsonObject;
 
 public class PeerThread extends Thread {
 	private BufferedReader bufferedReader;
+	private Socket socketOfServer;
 
+	/**
+	 * @param socketOfServer
+	 * @throws IOException
+	 */
 	public PeerThread(Socket socketOfServer) throws IOException {
+		this.socketOfServer = socketOfServer;
 		bufferedReader = new BufferedReader(new InputStreamReader(socketOfServer.getInputStream()));
 	}
 
 	@Override
 	public void run() {
 		boolean flag = true;
-		while (flag) {
+		while (flag && !interrupted()) {
 			try {
 				JsonObject jsonObject = Json.createReader(bufferedReader).readObject();
 				if (jsonObject.containsKey("username"))
@@ -26,8 +32,17 @@ public class PeerThread extends Thread {
 							.println("[" + jsonObject.getString("username") + "]: " + jsonObject.getString("message"));
 			} catch (Exception e) {
 				flag = false;
+				e.printStackTrace();
 				interrupt();
 			}
 		}
 	}
+
+	public Socket getSocketOfServer() {
+		return socketOfServer;
+	}
+
+
+	void cancel() { interrupt(); }
+	
 }
