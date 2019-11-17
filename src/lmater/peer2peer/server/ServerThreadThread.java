@@ -33,10 +33,10 @@ public class ServerThreadThread extends Thread {
 //			while (true) {
 //				serverThread.sendMessage(bufferedReader.readLine());
 //			}
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+//			e.getMessage();
 			serverThread.getServerThreadThreads().remove(this);
-			cancel();
+//			cancel();
 		} 
 	}
 
@@ -51,9 +51,9 @@ public class ServerThreadThread extends Thread {
 		try {
 			interrupt();
 			this.socket.close();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+//			e.getMessage();
 		}
 	}
 

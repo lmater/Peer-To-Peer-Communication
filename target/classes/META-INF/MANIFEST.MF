@@ -4,5 +4,5 @@ Class-Path: dependency/javax.json-api-1.1.jar dependency/javax.json-1.
  1.jar
 Build-Jdk: 1.8.0_221
 Created-By: Maven Integration for Eclipse
-Main-Class: lmater.peer2peer.peer.Peer
+Main-Class: lmater.peer2peer.Launcher
 

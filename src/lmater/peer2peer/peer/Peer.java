@@ -12,16 +12,11 @@ import javax.json.Json;
 import javax.json.JsonObject;
 
 import lmater.peer2peer.server.ServerThread;
-import lmater.peer2peer.server.ServerThreadThread;
 
 public class Peer {
 
 	private Set<PeerThread> peerThreads = new HashSet<PeerThread>();
-
-	/**
-	 * @param args
-	 * @throws IOException
-	 */
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("> enter username & port # for this peer :");
@@ -29,8 +24,8 @@ public class Peer {
 		ServerThread serverThread = new ServerThread(setupValues[1]);
 		serverThread.start();
 		new Peer().updateListenToPeers(bufferedReader, setupValues[0], serverThread);
-	}
-
+	 } 
+ 
 	/**
 	 * @param bufferedReader
 	 * @param username
@@ -106,7 +101,7 @@ public class Peer {
 			}
 			System.exit(0);
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.getMessage();
 		}
 	}
 

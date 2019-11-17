@@ -33,9 +33,9 @@ public class ServerThread extends Thread {
 				serverThreadThread.start();
 				connectionAwareness(serverThreadThread, socket);
 
-			} catch (IOException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+//				e.getMessage();
 				cancel();
 			}
 		}
@@ -49,7 +49,7 @@ public class ServerThread extends Thread {
 			serverThreadThreads.forEach(t -> t.getPrintwriter().println(message));
 		} catch (Exception e) {
 
-			e.printStackTrace();
+//			e.getMessage();
 		}
 	}
 
